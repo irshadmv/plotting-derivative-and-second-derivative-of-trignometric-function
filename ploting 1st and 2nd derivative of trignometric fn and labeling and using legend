@@ -1,0 +1,51 @@
+import numpy as np
+import matplotlib.pyplot as plt
+t=np.arange(0,10,0.01)
+
+s=np.sin(t)
+sd=np.gradient(s,0.01)
+sdd=np.gradient(sd,0.01)
+
+
+
+sh=np.sinh(t)
+shd=np.gradient(sh,0.01)
+shdd=np.gradient(shd,0.01)
+
+
+
+fig=plt.figure(figsize=(10,10))
+plt.subplot(2,2,1)
+plt.plot(t,sd,label='d/dt(sin(t))')
+plt.title('t vs d/dt(sin(t))')
+plt.xlabel('t')
+plt.ylabel('d/dt(sin(t))')
+plt.legend(loc='lower right')
+
+plt.subplot(2,2,2)
+plt.plot(t,sdd,label='d**2/dt**2(sin(t))')
+plt.title('t vs d**2/dt**2(sin(t))')
+plt.xlabel('t')
+plt.ylabel('d**2/dt**2(sin(t))')
+plt.legend(loc='lower right')
+
+
+plt.subplot(2,2,3)
+plt.plot(t,shd,label='d/dt(sinh(t))')
+plt.title('t vs d/dt(sinh(t))')
+plt.xlabel('t')
+plt.ylabel('d/dt(sinh(t))')
+plt.legend(loc='lower right')
+
+
+plt.subplot(2,2,4)
+plt.plot(t,shdd,label='d**2/dt**2(sinh(t))')
+plt.title('t vs d**2/dt**2(sinh(t))')
+plt.xlabel('t')
+plt.ylabel('d**2/dt**2(sinh(t))')
+
+plt.legend(loc='lower right')
+
+
+
+plt.show()
